@@ -1,0 +1,2135 @@
+@charset "UTF-8";
+
+/* ==============================================
+   pages.css — ページ固有のセクションスタイル
+   各セクションを独立したブロックとして設計
+============================================== */
+
+/* -----------------------------------------------
+   HOME: First View Hero
+----------------------------------------------- */
+.p-home-hero {
+  position: relative;
+  min-height: 60vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  /* TEMPLATE FIELD: hero_image_url — background-image を案件の画像に差し替える */
+  background-image: url('../images/hero.jpg');
+  background-color: var(--color-bg-deep);
+}
+
+.p-home-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    var(--color-hero-overlay-start) 0%,
+    var(--color-hero-overlay-mid)   45%,
+    var(--color-hero-overlay-end)   100%
+  );
+}
+
+.p-home-hero__content {
+  position: relative;
+  z-index: 2;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding: var(--space-6) var(--space-3);
+  width: 100%;
+}
+
+.p-home-hero__text-wrap {
+  max-width: 95%;
+}
+
+.p-home-hero__title {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: var(--font-weight-heading);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tight);
+  color: var(--color-hero-title);
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.8);
+  margin-bottom: var(--space-2);
+}
+
+.p-home-hero__sub {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-base);
+  color: var(--color-hero-sub);
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+@media (min-width: 48rem) {
+  .p-home-hero {
+    min-height: 80vh;
+  }
+
+  .p-home-hero__content {
+    padding: var(--space-10) var(--space-4);
+  }
+
+  .p-home-hero__title {
+    font-size: 2.25rem;
+  }
+
+  .p-home-hero__sub {
+    font-size: var(--font-size-lg);
+  }
+}
+
+/* -----------------------------------------------
+   HOME: Mini About
+----------------------------------------------- */
+.p-home-about {
+  background-color: var(--color-bg-dark);
+  padding-block: var(--space-10);
+  padding-inline: var(--space-2);
+  text-align: center;
+}
+
+.p-home-about__inner {
+  max-width: 42.5rem;
+  margin-inline: auto;
+}
+
+.p-home-about__lead {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-loose);
+  color: var(--color-text);
+  letter-spacing: var(--letter-spacing-tight);
+  margin: 0;
+  position: relative;
+  padding-top: var(--space-4);
+}
+
+.p-home-about__lead::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 1.5rem;
+  background-color: var(--color-primary);
+}
+
+@media (min-width: 48rem) {
+  .p-home-about {
+    padding-block: var(--space-12);
+    padding-inline: var(--space-4);
+  }
+
+  .p-home-about__lead {
+    font-size: var(--font-size-xl);
+  }
+}
+
+/* -----------------------------------------------
+   HOME: Service Preview
+----------------------------------------------- */
+.p-home-service {
+  background: linear-gradient(to bottom, var(--color-bg-dark) 0%, var(--color-bg) 100%);
+  padding-block: var(--space-12);
+  padding-inline: var(--space-2);
+}
+
+.p-home-service__inner {
+  max-width: 60rem;
+  margin-inline: auto;
+}
+
+.p-home-service__btn-wrap {
+  text-align: center;
+  margin-top: var(--space-8);
+}
+
+@media (min-width: 48rem) {
+  .p-home-service {
+    padding-block: var(--space-16);
+    padding-inline: var(--space-4);
+  }
+}
+
+/* -----------------------------------------------
+   HOME: Reason Mini
+----------------------------------------------- */
+.p-home-reason {
+  background: linear-gradient(135deg, var(--color-bg) 0%, var(--color-bg-dark) 100%);
+  padding-block: var(--space-10);
+  padding-inline: var(--space-2);
+  color: var(--color-text);
+}
+
+.p-home-reason__inner {
+  max-width: 56.25rem;
+  margin-inline: auto;
+}
+
+.p-home-reason__interior {
+  max-width: 50rem;
+  margin-inline: auto;
+  margin-top: var(--space-10);
+}
+
+.p-home-reason__interior-lead {
+  text-align: center;
+  font-size: var(--font-size-sm);
+  line-height: 1.9;
+  color: var(--color-text-sub);
+  margin-bottom: var(--space-8);
+  font-family: var(--font-serif);
+}
+
+@media (min-width: 48rem) {
+  .p-home-reason {
+    padding-block: var(--space-12);
+    padding-inline: var(--space-4);
+  }
+}
+
+/* -----------------------------------------------
+   HOME: Business Info
+----------------------------------------------- */
+.p-home-bizinfo {
+  background: linear-gradient(135deg, var(--color-bg) 0%, var(--color-bg-dark) 100%);
+  padding-block: var(--space-10);
+  padding-inline: var(--space-2);
+}
+
+.p-home-bizinfo__inner {
+  max-width: 43.75rem;
+  margin-inline: auto;
+}
+
+.p-home-bizinfo__title {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-heading);
+  text-align: center;
+  letter-spacing: var(--letter-spacing-wide);
+  color: var(--color-text);
+  margin-bottom: var(--space-6);
+  position: relative;
+}
+
+.p-home-bizinfo__title::after {
+  content: "";
+  display: block;
+  width: 1.875rem;
+  height: 1px;
+  background-color: var(--color-primary);
+  margin: var(--space-2) auto 0;
+}
+
+@media (min-width: 48rem) {
+  .p-home-bizinfo {
+    padding-block: var(--space-12);
+    padding-inline: var(--space-4);
+  }
+
+  .p-home-bizinfo__title {
+    font-size: var(--font-size-2xl);
+  }
+}
+
+/* -----------------------------------------------
+   HOME: Access / Map
+----------------------------------------------- */
+.p-home-map {
+  background-color: var(--color-bg-deep);
+  padding-block: var(--space-10);
+  padding-inline: var(--space-2);
+}
+
+.p-home-map__inner {
+  max-width: 56.25rem;
+  margin-inline: auto;
+}
+
+.p-home-map__title {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-heading);
+  text-align: center;
+  letter-spacing: var(--letter-spacing-wide);
+  color: var(--color-text);
+  margin-bottom: var(--space-2);
+}
+
+.p-home-map__address {
+  text-align: center;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-sub);
+  margin-bottom: var(--space-6);
+  font-family: var(--font-serif);
+  letter-spacing: var(--letter-spacing-tight);
+  line-height: var(--line-height-base);
+}
+
+@media (min-width: 48rem) {
+  .p-home-map {
+    padding-block: var(--space-12);
+    padding-inline: var(--space-4);
+  }
+
+  .p-home-map__title {
+    font-size: var(--font-size-2xl);
+  }
+}
+
+/* -----------------------------------------------
+   HOME: Page Links
+----------------------------------------------- */
+.p-home-pagelinks {
+  background: linear-gradient(to bottom, var(--color-bg-dark) 0%, var(--color-bg) 100%);
+  padding-block: var(--space-10);
+  padding-inline: var(--space-2);
+}
+
+.p-home-pagelinks__inner {
+  max-width: 56.25rem;
+  margin-inline: auto;
+}
+
+.p-home-pagelinks__eyebrow {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-xs);
+  text-align: center;
+  letter-spacing: var(--letter-spacing-wider);
+  color: var(--color-primary);
+  margin-bottom: var(--space-6);
+}
+
+@media (min-width: 48rem) {
+  .p-home-pagelinks {
+    padding-block: var(--space-12);
+    padding-inline: var(--space-4);
+  }
+}
+
+/* -----------------------------------------------
+   HOME: Contact Strip
+----------------------------------------------- */
+.p-home-connect {
+  background: linear-gradient(to bottom, var(--color-bg-dark) 0%, var(--color-bg-deep) 100%);
+  padding-block: var(--space-8) var(--space-10);
+  padding-inline: var(--space-2);
+}
+
+.p-home-connect__inner {
+  max-width: 62.5rem;
+  margin-inline: auto;
+}
+
+@media (min-width: 48rem) {
+  .p-home-connect {
+    padding-block: var(--space-10) var(--space-12);
+    padding-inline: var(--space-4);
+  }
+}
+
+/* -----------------------------------------------
+   SERVICE: Main Services section
+----------------------------------------------- */
+.p-service-main {
+  background: linear-gradient(135deg, var(--color-bg-dark) 0%, var(--color-bg) 100%);
+  padding-block: var(--space-10);
+  padding-inline: var(--space-2);
+}
+
+.p-service-main__inner {
+  max-width: 56.25rem;
+  margin-inline: auto;
+}
+
+@media (min-width: 48rem) {
+  .p-service-main {
+    padding-block: var(--space-12);
+    padding-inline: var(--space-4);
+  }
+}
+
+/* -----------------------------------------------
+   SERVICE: Price Guide
+----------------------------------------------- */
+.p-service-price {
+  background-color: var(--color-bg);
+  border-top: 1px solid var(--color-border-light);
+  padding-block: var(--space-8);
+  padding-inline: var(--space-2);
+}
+
+.p-service-price__inner {
+  max-width: 56.25rem;
+  margin-inline: auto;
+}
+
+@media (min-width: 48rem) {
+  .p-service-price {
+    padding-block: var(--space-12);
+    padding-inline: var(--space-4);
+  }
+}
+
+/* -----------------------------------------------
+   SERVICE: Simple Flow
+----------------------------------------------- */
+.p-service-flow {
+  background: linear-gradient(to bottom, var(--color-bg-dark) 0%, var(--color-bg-deep) 100%);
+  padding-block: var(--space-10);
+  padding-inline: var(--space-2);
+}
+
+.p-service-flow__inner {
+  max-width: 50rem;
+  margin-inline: auto;
+}
+
+@media (min-width: 48rem) {
+  .p-service-flow {
+    padding-block: var(--space-12);
+    padding-inline: var(--space-4);
+  }
+}
+
+/* -----------------------------------------------
+   SERVICE: Notes
+----------------------------------------------- */
+.p-service-notes {
+  background-color: var(--color-bg-dark);
+  padding-block: var(--space-8) var(--space-4);
+  padding-inline: var(--space-2);
+}
+
+.p-service-notes__inner {
+  max-width: 50rem;
+  margin-inline: auto;
+  border-top: 1px solid var(--color-border-gold);
+  padding-top: var(--space-6);
+}
+
+.p-service-notes__title {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-heading);
+  text-align: center;
+  color: var(--color-text);
+  margin-bottom: var(--space-6);
+  letter-spacing: var(--letter-spacing-base);
+}
+
+@media (min-width: 48rem) {
+  .p-service-notes {
+    padding-block: var(--space-12) var(--space-6);
+    padding-inline: var(--space-4);
+  }
+
+  .p-service-notes__inner {
+    padding-top: var(--space-8);
+  }
+}
+
+/* -----------------------------------------------
+   SERVICE: CTA
+----------------------------------------------- */
+.p-service-cta {
+  background-color: var(--color-bg-deep);
+  padding-block: var(--space-12);
+  padding-inline: var(--space-2);
+}
+
+.p-service-cta__inner {
+  max-width: 42.5rem;
+  margin-inline: auto;
+}
+
+.p-service-cta__title {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-heading);
+  letter-spacing: var(--letter-spacing-wide);
+  color: var(--color-white);
+  margin-bottom: var(--space-4);
+}
+
+.p-service-cta__lead {
+  font-family: var(--font-serif);
+  font-size: 0.9375rem;
+  line-height: var(--line-height-loose);
+  color: var(--color-text-sub);
+  margin-bottom: var(--space-8);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.p-service-cta__action {
+  margin-bottom: var(--space-3);
+}
+
+.p-service-cta__note {
+  font-size: var(--font-size-xs);
+  color: #888888;
+  margin: 0;
+}
+
+@media (min-width: 48rem) {
+  .p-service-cta {
+    padding-block: var(--space-16);
+    padding-inline: var(--space-4);
+  }
+
+  .p-service-cta__title {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--space-6);
+  }
+
+  .p-service-cta__lead {
+    font-size: var(--font-size-base);
+    margin-bottom: var(--space-10);
+  }
+}
+
+/* -----------------------------------------------
+   CONTACT: Contact Methods section
+----------------------------------------------- */
+.p-contact-methods {
+  background: linear-gradient(135deg, var(--color-bg-dark) 0%, var(--color-bg) 100%);
+  padding-block: var(--space-10);
+  padding-inline: var(--space-2);
+}
+
+.p-contact-methods__inner {
+  max-width: 56.25rem;
+  margin-inline: auto;
+}
+
+.p-contact-methods__lead {
+  font-family: var(--font-serif);
+  font-size: 0.9375rem;
+  text-align: center;
+  color: var(--color-text-sub);
+  line-height: 2;
+  margin-bottom: var(--space-8);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+@media (min-width: 48rem) {
+  .p-contact-methods {
+    padding-block: var(--space-12);
+    padding-inline: var(--space-4);
+  }
+}
+
+/* -----------------------------------------------
+   CONTACT: Before Contact
+----------------------------------------------- */
+.p-contact-before {
+  background-color: var(--color-bg-dark);
+  padding-block: var(--space-8);
+  padding-inline: var(--space-2);
+}
+
+.p-contact-before__inner {
+  max-width: 43.75rem;
+  margin-inline: auto;
+  border-top: 1px solid var(--color-border-gold);
+  padding-top: var(--space-6);
+}
+
+.p-contact-before__title {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-heading);
+  text-align: center;
+  color: var(--color-text);
+  margin-bottom: var(--space-6);
+  letter-spacing: var(--letter-spacing-base);
+}
+
+@media (min-width: 48rem) {
+  .p-contact-before {
+    padding-block: var(--space-10);
+    padding-inline: var(--space-4);
+  }
+
+  .p-contact-before__inner {
+    padding-top: var(--space-8);
+  }
+}
+
+/* -----------------------------------------------
+   CONTACT: Final CTA
+----------------------------------------------- */
+.p-contact-final-cta {
+  background-color: var(--color-bg-deep);
+  padding-block: var(--space-10);
+  padding-inline: var(--space-2);
+  text-align: center;
+}
+
+.p-contact-final-cta__inner {
+  max-width: 42.5rem;
+  margin-inline: auto;
+}
+
+.p-contact-final-cta__text {
+  font-family: var(--font-serif);
+  font-size: 0.9375rem;
+  color: var(--color-text-sub);
+  line-height: var(--line-height-loose);
+  margin-bottom: var(--space-6);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.p-contact-final-cta__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2) var(--space-6);
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+  font-family: var(--font-serif);
+  font-size: var(--font-size-base);
+  letter-spacing: var(--letter-spacing-base);
+  transition: background-color var(--transition-base), border-color var(--transition-base), color var(--transition-base);
+}
+
+.p-contact-final-cta__btn:hover {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-btn-primary-text);
+  opacity: 1;
+}
+
+@media (min-width: 48rem) {
+  .p-contact-final-cta {
+    padding-block: var(--space-12);
+    padding-inline: var(--space-4);
+  }
+
+  .p-contact-final-cta__text {
+    font-size: var(--font-size-base);
+  }
+}
+
+/* -----------------------------------------------
+   PRIVACY: Policy Body
+----------------------------------------------- */
+.p-privacy-body {
+  background: linear-gradient(135deg, var(--color-bg-dark) 0%, var(--color-bg) 100%);
+  padding-block: var(--space-10);
+  padding-inline: var(--space-2);
+}
+
+.p-privacy-body__inner {
+  max-width: 47.5rem;
+  margin-inline: auto;
+}
+
+@media (min-width: 48rem) {
+  .p-privacy-body {
+    padding-block: var(--space-12);
+    padding-inline: var(--space-4);
+  }
+}
+
+/* -----------------------------------------------
+   PRIVACY: Contact for Policy
+----------------------------------------------- */
+.p-privacy-contact {
+  background-color: var(--color-bg-deep);
+  padding-block: var(--space-8) var(--space-10);
+  padding-inline: var(--space-2);
+  text-align: center;
+}
+
+.p-privacy-contact__inner {
+  max-width: 35rem;
+  margin-inline: auto;
+}
+
+.p-privacy-contact__text {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-sub);
+  margin-bottom: var(--space-3);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.p-privacy-contact__info {
+  font-size: var(--font-size-sm);
+  color: var(--color-text);
+  line-height: var(--line-height-base);
+  margin-bottom: var(--space-6);
+}
+
+.p-privacy-contact__info p {
+  margin: 0;
+}
+
+.p-privacy-contact__back-btn {
+  display: inline-block;
+  font-family: var(--font-serif);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-sub);
+  border: 1px solid var(--color-border-light);
+  padding: 0.8rem var(--space-4);
+  letter-spacing: var(--letter-spacing-tight);
+  transition: border-color var(--transition-base), color var(--transition-base);
+}
+
+.p-privacy-contact__back-btn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-text);
+  opacity: 1;
+}
+
+@media (min-width: 48rem) {
+  .p-privacy-contact {
+    padding-block: var(--space-10) var(--space-12);
+    padding-inline: var(--space-4);
+  }
+}
+
+/* ===============================================
+   SITE: yoga-demo — ピラティス&ヨガ スタジオ 凪
+   案件固有スタイル。.site--yoga-demo でスコープ。
+   「息を吸う余白」— breathable, centered design
+=============================================== */
+
+/* -----------------------------------------------
+   共通: ローダー — 縦書きスタジオ名
+----------------------------------------------- */
+.site--yoga-demo .c-loader {
+  transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 2s, visibility 1s 2s;
+}
+
+.site--yoga-demo .c-loader__text {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  font-size: var(--font-size-base);
+  letter-spacing: 0.2em;
+}
+
+/* -----------------------------------------------
+   共通: ヘッダー — 明るい背景・ソフトシャドウ
+----------------------------------------------- */
+.site--yoga-demo .l-header {
+  border-bottom-color: var(--color-border-gold);
+  box-shadow: 0 1px 16px rgba(45, 41, 38, 0.05);
+}
+
+.site--yoga-demo .l-nav-pc__link {
+  font-size: var(--font-size-sm);
+  letter-spacing: var(--letter-spacing-base);
+}
+
+/* -----------------------------------------------
+   共通: セクションタイトル — 縦ライン+中央+余白
+----------------------------------------------- */
+.site--yoga-demo .c-sec-title {
+  padding-top: var(--space-8);
+  padding-bottom: var(--space-2);
+  margin-bottom: var(--space-10);
+  font-size: var(--font-size-xl);
+  letter-spacing: var(--letter-spacing-wide);
+}
+
+.site--yoga-demo .c-sec-title::before {
+  display: none;
+}
+
+.site--yoga-demo .c-sec-title::after {
+  display: none;
+}
+
+@media (min-width: 48rem) {
+  .site--yoga-demo .c-sec-title {
+    font-size: var(--font-size-2xl);
+  }
+}
+
+/* -----------------------------------------------
+   共通: サブページ Page Hero — 大きな縦余白・中央
+----------------------------------------------- */
+.site--yoga-demo .c-page-hero {
+  padding-top: calc(var(--header-height) + var(--space-12));
+  padding-bottom: var(--space-12);
+  background: linear-gradient(
+    to bottom,
+    var(--color-bg-deep) 0%,
+    var(--color-bg-dark) 60%,
+    var(--color-bg)      100%
+  );
+  border-bottom: 1px solid var(--color-border-gold);
+}
+
+.site--yoga-demo .c-page-hero::before {
+  display: none;
+}
+
+.site--yoga-demo .c-page-hero__inner {
+  gap: var(--space-3);
+  padding-top: var(--space-4);
+  position: relative;
+}
+
+.site--yoga-demo .c-page-hero__en {
+  font-size: 0.6875rem;
+  letter-spacing: var(--letter-spacing-wider);
+  opacity: 0.75;
+}
+
+.site--yoga-demo .c-page-hero__title {
+  font-size: var(--font-size-2xl);
+  letter-spacing: var(--letter-spacing-wide);
+  line-height: 1.5;
+}
+
+.site--yoga-demo .c-page-hero__sub {
+  font-size: var(--font-size-sm);
+  line-height: 2.2;
+  padding-top: var(--space-4);
+  opacity: 0.85;
+}
+
+.site--yoga-demo .c-page-hero__sub::before {
+  display: none;
+}
+
+@media (min-width: 48rem) {
+  .site--yoga-demo .c-page-hero {
+    padding-top: calc(var(--header-height) + var(--space-16));
+    padding-bottom: var(--space-16);
+  }
+
+  .site--yoga-demo .c-page-hero__title {
+    font-size: 2.5rem;
+  }
+
+  .site--yoga-demo .c-page-hero__sub {
+    font-size: var(--font-size-base);
+  }
+}
+
+/* -----------------------------------------------
+   HOME: Hero — 中央揃え・全画面・呼吸するレイアウト
+----------------------------------------------- */
+.site--yoga-demo .p-home-hero {
+  min-height: 92vh;
+  align-items: center;
+  background-position: center 30%;
+}
+
+.site--yoga-demo .p-home-hero__overlay {
+  background: linear-gradient(
+    160deg,
+    var(--color-hero-overlay-start) 0%,
+    var(--color-hero-overlay-mid)   55%,
+    var(--color-hero-overlay-end)   100%
+  );
+}
+
+.site--yoga-demo .p-home-hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--space-10) var(--space-6);
+}
+
+.site--yoga-demo .p-home-hero__text-wrap {
+  max-width: none;
+  position: relative;
+  padding-top: 0;
+}
+
+.site--yoga-demo .p-home-hero__text-wrap::before {
+  display: none;
+}
+
+.site--yoga-demo .p-home-hero__title {
+  writing-mode: vertical-rl;
+  font-size: 2rem;
+  letter-spacing: 0.14em;
+  line-height: 2;
+  height: 20rem;
+  margin-bottom: 0;
+  text-shadow: 0 2px 24px rgba(45, 41, 38, 0.45);
+}
+
+.site--yoga-demo .p-home-hero__title span {
+  display: inline-block;
+}
+
+.site--yoga-demo .p-home-hero__title span:nth-of-type(2) {
+  padding-top: 3rem;
+}
+
+.site--yoga-demo .p-home-hero__sub {
+  position: absolute;
+  bottom: var(--space-8);
+  right: var(--space-6);
+  max-width: 22rem;
+  font-size: var(--font-size-sm);
+  letter-spacing: var(--letter-spacing-base);
+  line-height: 2.2;
+  text-align: right;
+  opacity: 0.88;
+  text-shadow: 0 1px 8px rgba(45, 41, 38, 0.4);
+}
+
+@media (min-width: 48rem) {
+  .site--yoga-demo .p-home-hero {
+    min-height: 95vh;
+  }
+
+  .site--yoga-demo .p-home-hero__content {
+    padding: var(--space-12) var(--space-10);
+  }
+
+  .site--yoga-demo .p-home-hero__title {
+    font-size: 2.75rem;
+    line-height: 1.9;
+    height: 27rem;
+  }
+
+  .site--yoga-demo .p-home-hero__sub {
+    font-size: var(--font-size-base);
+    bottom: var(--space-10);
+    right: var(--space-10);
+    max-width: 28rem;
+  }
+}
+
+/* -----------------------------------------------
+   HOME: Mini About — 深い余白・呼吸する文章
+----------------------------------------------- */
+.site--yoga-demo .p-home-about {
+  background-color: var(--color-bg);
+  padding-block: var(--space-16);
+  padding-inline: var(--space-4);
+}
+
+.site--yoga-demo .p-home-about__inner {
+  max-width: 34rem;
+  margin: 0 auto;
+}
+
+.site--yoga-demo .p-home-about__lead {
+  writing-mode: vertical-rl;
+  height: 20rem;
+  font-size: var(--font-size-base);
+  line-height: 3.25;
+  letter-spacing: 0.1em;
+  color: var(--color-text);
+  padding-top: 0;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.site--yoga-demo .p-home-about__lead::before {
+  display: none;
+}
+
+.site--yoga-demo .p-home-about__lead span {
+  display: inline-block;
+}
+
+.site--yoga-demo .p-home-about__lead span:nth-of-type(2) { padding-top: 1.5rem; }
+.site--yoga-demo .p-home-about__lead span:nth-of-type(3) { padding-top: 3rem; }
+.site--yoga-demo .p-home-about__lead span:nth-of-type(4) { padding-top: 4.5rem; }
+
+@media (min-width: 48rem) {
+  .site--yoga-demo .p-home-about {
+    padding-block: var(--space-16);
+  }
+
+  .site--yoga-demo .p-home-about__lead {
+    font-size: var(--font-size-base);
+  }
+}
+
+/* -----------------------------------------------
+   HOME: Service Preview — フィーチャー + サブ2枚
+----------------------------------------------- */
+.site--yoga-demo .p-home-service {
+  background-color: var(--color-bg-dark);
+  padding-block: var(--space-12) var(--space-14);
+  padding-inline: var(--space-3);
+}
+
+/* Featured: 横長カード（円形廃止）*/
+.site--yoga-demo .c-service-card--featured {
+  flex-direction: column;
+  align-items: stretch;
+  border-bottom: none;
+  padding-bottom: 0;
+  gap: 0;
+  background-color: var(--color-bg);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  margin-bottom: var(--space-4);
+}
+
+.site--yoga-demo .c-service-card--featured .c-service-card__img-wrap {
+  width: 100%;
+  height: 16rem;
+  border-radius: 0;
+  padding: 0;
+  border: none;
+  margin: 0;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.site--yoga-demo .c-service-card--featured .c-service-card__img {
+  border-radius: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.site--yoga-demo .c-service-card--featured:hover .c-service-card__img {
+  transform: scale(1.04);
+}
+
+.site--yoga-demo .c-service-card--featured .c-service-card__body {
+  padding: var(--space-6) var(--space-4);
+}
+
+.site--yoga-demo .c-service-card--featured .c-service-card__title {
+  font-size: var(--font-size-xl);
+  letter-spacing: var(--letter-spacing-wide);
+  text-align: left;
+  border-bottom: 1px solid var(--color-border-gold);
+  padding-bottom: var(--space-3);
+  margin-bottom: var(--space-2);
+}
+
+.site--yoga-demo .c-service-card--featured .c-service-card__subtitle {
+  text-align: left;
+  font-size: var(--font-size-xs);
+  letter-spacing: var(--letter-spacing-wide);
+  color: var(--color-primary);
+  margin-bottom: var(--space-3);
+}
+
+.site--yoga-demo .c-service-card--featured .c-service-card__text {
+  text-align: left;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-sub);
+  line-height: 2.1;
+}
+
+/* Sub: テキスト主体のシンプルカード */
+.site--yoga-demo .c-service-subgrid {
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+}
+
+.site--yoga-demo .c-service-card--list {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  background-color: var(--color-bg);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  box-shadow: var(--shadow-sm);
+}
+
+.site--yoga-demo .c-service-card--list .c-service-card__img-wrap {
+  display: none;
+}
+
+.site--yoga-demo .c-service-card--list .c-service-card__title {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-sm);
+  letter-spacing: var(--letter-spacing-base);
+  text-align: left;
+  border-left: 2px solid var(--color-primary);
+  padding-left: var(--space-2);
+  margin-bottom: var(--space-2);
+  width: 100%;
+}
+
+.site--yoga-demo .c-service-card--list .c-service-card__text {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-sub);
+  line-height: 1.9;
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.site--yoga-demo .p-home-service__btn-wrap {
+  margin-top: var(--space-10);
+}
+
+@media (min-width: 48rem) {
+  .site--yoga-demo .p-home-service {
+    padding-inline: var(--space-4);
+  }
+
+  .site--yoga-demo .c-service-card--featured {
+    flex-direction: row;
+    min-height: 340px;
+  }
+
+  .site--yoga-demo .c-service-card--featured .c-service-card__img-wrap {
+    width: 46%;
+    height: auto;
+  }
+
+  .site--yoga-demo .c-service-card--featured .c-service-card__body {
+    padding: var(--space-10) var(--space-8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .site--yoga-demo .c-service-subgrid {
+    gap: var(--space-4);
+  }
+
+  .site--yoga-demo .c-service-card--list {
+    padding: var(--space-6);
+  }
+}
+
+/* -----------------------------------------------
+   HOME: Reason Mini — ボーダー仕切り・呼吸する間隔
+----------------------------------------------- */
+.site--yoga-demo .p-home-reason {
+  background-color: var(--color-bg);
+  padding-block: var(--space-12) var(--space-16);
+  padding-inline: var(--space-4);
+}
+
+.site--yoga-demo .p-home-reason__inner {
+  max-width: 50rem;
+}
+
+.site--yoga-demo .c-reason-timeline {
+  border-left: none;
+  padding-left: 0;
+  margin-left: 0;
+  flex-direction: column;
+  gap: 0;
+}
+
+.site--yoga-demo .c-reason-item {
+  border-top: 1px solid var(--color-border-gold);
+  padding-top: var(--space-6);
+  padding-bottom: var(--space-6);
+  position: static;
+}
+
+.site--yoga-demo .c-reason-item::before {
+  display: none;
+}
+
+.site--yoga-demo .c-reason-item__heading {
+  font-size: var(--font-size-base);
+  letter-spacing: var(--letter-spacing-base);
+  margin-bottom: var(--space-3);
+  color: var(--color-text);
+  position: relative;
+  padding-left: var(--space-4);
+}
+
+.site--yoga-demo .c-reason-item__heading::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.4em;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  opacity: 0.8;
+}
+
+.site--yoga-demo .c-reason-item__text {
+  font-size: var(--font-size-sm);
+  line-height: 2.1;
+  letter-spacing: var(--letter-spacing-tight);
+  padding-left: var(--space-4);
+}
+
+.site--yoga-demo .p-home-reason__interior {
+  margin-top: var(--space-12);
+  background-color: var(--color-bg-dark);
+  border-radius: var(--radius-md);
+  padding: var(--space-8) var(--space-4);
+  max-width: 50rem;
+}
+
+.site--yoga-demo .p-home-reason__interior-lead {
+  font-size: var(--font-size-sm);
+  line-height: 2.2;
+  letter-spacing: var(--letter-spacing-base);
+  margin-bottom: var(--space-6);
+}
+
+@media (min-width: 48rem) {
+  .site--yoga-demo .c-reason-timeline {
+    flex-direction: row;
+    gap: 0;
+  }
+
+  .site--yoga-demo .c-reason-item {
+    flex: 1;
+    border-top: none;
+    border-left: 1px solid var(--color-border-gold);
+    padding-top: 0;
+    padding-left: var(--space-8);
+    padding-right: var(--space-6);
+    padding-bottom: 0;
+  }
+
+  .site--yoga-demo .c-reason-item:first-child {
+    border-left: none;
+    padding-left: 0;
+  }
+
+  .site--yoga-demo .p-home-reason__interior {
+    padding: var(--space-8) var(--space-10);
+  }
+}
+
+/* -----------------------------------------------
+   HOME: Interior Gallery — 角丸・緑ライン caption
+----------------------------------------------- */
+.site--yoga-demo .c-interior-item__img {
+  border-radius: var(--radius-md);
+}
+
+.site--yoga-demo .c-interior-item__caption {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-sub);
+  letter-spacing: var(--letter-spacing-base);
+  padding-left: var(--space-2);
+  border-left: 2px solid var(--color-primary);
+  line-height: 1.8;
+  opacity: 0.9;
+}
+
+/* -----------------------------------------------
+   HOME: Business Info — クリーンテーブル・余白大
+----------------------------------------------- */
+.site--yoga-demo .p-home-bizinfo {
+  background-color: var(--color-bg-dark);
+  padding-block: var(--space-12) var(--space-14);
+  padding-inline: var(--space-4);
+}
+
+.site--yoga-demo .p-home-bizinfo__title {
+  letter-spacing: var(--letter-spacing-wider);
+  padding-top: var(--space-8);
+  margin-bottom: var(--space-8);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--color-border-gold);
+  text-align: center;
+}
+
+.site--yoga-demo .p-home-bizinfo__title::after {
+  display: none;
+}
+
+.site--yoga-demo .c-bizinfo-table {
+  border-collapse: collapse;
+}
+
+.site--yoga-demo .c-bizinfo-table th,
+.site--yoga-demo .c-bizinfo-table td {
+  padding-block: var(--space-3);
+  border-bottom: 1px solid var(--color-border-light);
+  font-size: var(--font-size-sm);
+}
+
+.site--yoga-demo .c-bizinfo-table th {
+  width: 7rem;
+  font-size: var(--font-size-xs);
+  letter-spacing: var(--letter-spacing-wide);
+  color: var(--color-primary);
+  font-weight: var(--font-weight-heading);
+  vertical-align: top;
+  padding-top: calc(var(--space-3) + 0.15em);
+}
+
+.site--yoga-demo .c-bizinfo-table td {
+  color: var(--color-text);
+  line-height: 2;
+}
+
+.site--yoga-demo .c-bizinfo-table tr:last-child th,
+.site--yoga-demo .c-bizinfo-table tr:last-child td {
+  padding-bottom: var(--space-6);
+}
+
+@media (min-width: 48rem) {
+  .site--yoga-demo .c-bizinfo-table th {
+    width: 9rem;
+  }
+}
+
+/* -----------------------------------------------
+   HOME: Page Links — 角丸・ホバーでセージグリーン
+----------------------------------------------- */
+.site--yoga-demo .p-home-pagelinks {
+  background-color: var(--color-bg);
+  padding-block: var(--space-12);
+  padding-inline: var(--space-4);
+}
+
+.site--yoga-demo .c-pagelinks-grid {
+  gap: var(--space-4);
+  max-width: 42rem;
+  margin-inline: auto;
+}
+
+.site--yoga-demo .c-pagelink-item {
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-gold);
+  padding: var(--space-8) var(--space-6);
+  gap: var(--space-2);
+  min-height: 10rem;
+  background-color: var(--color-bg-dark);
+  box-shadow: var(--shadow-sm);
+  transition: background-color var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+.site--yoga-demo .c-pagelink-item:hover {
+  background-color: var(--color-primary-subtle);
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-md);
+  opacity: 1;
+}
+
+.site--yoga-demo .c-pagelink-item__en {
+  font-size: 0.6875rem;
+  letter-spacing: var(--letter-spacing-wider);
+  opacity: 0.9;
+}
+
+.site--yoga-demo .c-pagelink-item__label {
+  font-size: var(--font-size-sm);
+  letter-spacing: var(--letter-spacing-base);
+}
+
+@media (min-width: 48rem) {
+  .site--yoga-demo .c-pagelinks-grid {
+    max-width: 52rem;
+  }
+
+  .site--yoga-demo .c-pagelink-item {
+    min-height: 12rem;
+  }
+
+  .site--yoga-demo .c-pagelink-item__label {
+    font-size: var(--font-size-base);
+  }
+}
+
+/* -----------------------------------------------
+   HOME: Connect — LINE主役、TEL/Instagram サブ行
+----------------------------------------------- */
+.site--yoga-demo .p-home-connect {
+  background-color: var(--color-bg-dark);
+  padding-block: var(--space-12) var(--space-16);
+  padding-inline: var(--space-4);
+  border-top: 1px solid var(--color-border-gold);
+}
+
+.site--yoga-demo .p-home-connect__inner {
+  max-width: 34rem;
+}
+
+.site--yoga-demo .c-connect-grid {
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+/* LINE — メインCTA */
+.site--yoga-demo .c-connect-item--main {
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  padding: 0 0 var(--space-8);
+  border-bottom: 1px solid var(--color-border-gold);
+  margin-bottom: var(--space-6);
+  box-shadow: none;
+  text-align: center;
+}
+
+.site--yoga-demo .c-connect-item--main .c-connect-item__heading {
+  font-size: var(--font-size-lg);
+  letter-spacing: var(--letter-spacing-base);
+  margin-bottom: var(--space-3);
+}
+
+.site--yoga-demo .c-connect-item--main .c-connect-item__text {
+  font-size: var(--font-size-xs);
+  line-height: 2;
+  margin-bottom: var(--space-6);
+  color: var(--color-text-sub);
+}
+
+.site--yoga-demo .c-connect-item--main .c-connect-item__btn {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+  border-radius: var(--btn-radius);
+  max-width: 100%;
+  padding-block: var(--space-3);
+  font-size: var(--font-size-sm);
+  letter-spacing: var(--letter-spacing-base);
+  transition: background-color var(--transition-base), opacity var(--transition-base);
+  width: 100%;
+}
+
+.site--yoga-demo .c-connect-item--main .c-connect-item__btn:hover {
+  background-color: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+  opacity: 1;
+}
+
+/* TEL / Instagram — サブリンク行 */
+.site--yoga-demo .c-connect-item:not(.c-connect-item--main) {
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid var(--color-border-light);
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  text-align: left;
+}
+
+.site--yoga-demo .c-connect-item:not(.c-connect-item--main):last-child {
+  border-bottom: none;
+}
+
+.site--yoga-demo .c-connect-item:not(.c-connect-item--main) .c-connect-item__heading {
+  font-size: var(--font-size-sm);
+  letter-spacing: var(--letter-spacing-base);
+  margin-bottom: 0;
+  flex: 1;
+}
+
+.site--yoga-demo .c-connect-item:not(.c-connect-item--main) .c-connect-item__text {
+  display: none;
+}
+
+.site--yoga-demo .c-connect-item:not(.c-connect-item--main) .c-connect-item__btn {
+  display: inline-block;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  padding-bottom: 0.15rem;
+  max-width: none;
+  background: transparent;
+  border-bottom: 1px solid var(--color-primary);
+  font-size: var(--font-size-xs);
+  color: var(--color-primary);
+  letter-spacing: var(--letter-spacing-tight);
+  width: auto;
+  transition: color var(--transition-base), border-color var(--transition-base);
+}
+
+.site--yoga-demo .c-connect-item:not(.c-connect-item--main) .c-connect-item__btn:hover {
+  background: transparent;
+  color: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+  opacity: 1;
+}
+
+@media (min-width: 48rem) {
+  .site--yoga-demo .p-home-connect__inner {
+    max-width: 36rem;
+  }
+
+  .site--yoga-demo .c-connect-item--main .c-connect-item__heading {
+    font-size: var(--font-size-xl);
+  }
+}
+
+/* -----------------------------------------------
+   SERVICE: Main Services — 角丸・大きな余白・交互
+----------------------------------------------- */
+.site--yoga-demo .p-service-main {
+  background-color: var(--color-bg);
+  padding-block: var(--space-10) var(--space-16);
+  padding-inline: var(--space-4);
+}
+
+.site--yoga-demo .p-service-main__inner {
+  max-width: 56rem;
+}
+
+.site--yoga-demo .c-menu-list {
+  gap: var(--space-16);
+}
+
+.site--yoga-demo .c-menu-item__img-wrap {
+  overflow: hidden;
+  border-radius: var(--radius-md);
+}
+
+.site--yoga-demo .c-menu-item__img {
+  border-radius: var(--radius-md);
+  transition: transform var(--transition-slow);
+}
+
+.site--yoga-demo .c-menu-item:hover .c-menu-item__img {
+  transform: scale(1.03);
+}
+
+.site--yoga-demo .c-menu-item__name {
+  font-size: var(--font-size-xl);
+  letter-spacing: var(--letter-spacing-wide);
+  border-bottom: 1px solid var(--color-border-gold);
+  padding-bottom: var(--space-3);
+  margin-bottom: var(--space-3);
+  font-weight: var(--font-weight-heading);
+}
+
+.site--yoga-demo .c-menu-item__price {
+  font-size: var(--font-size-sm);
+  color: var(--color-primary);
+  letter-spacing: var(--letter-spacing-tight);
+  margin-bottom: var(--space-4);
+}
+
+.site--yoga-demo .c-menu-item__desc {
+  font-size: var(--font-size-sm);
+  line-height: 2.2;
+  letter-spacing: var(--letter-spacing-tight);
+  color: var(--color-text-sub);
+}
+
+@media (min-width: 48rem) {
+  .site--yoga-demo .c-menu-item {
+    gap: var(--space-10);
+    align-items: center;
+  }
+
+  .site--yoga-demo .c-menu-item__img-wrap {
+    width: 46%;
+  }
+
+  .site--yoga-demo .c-menu-item__content {
+    width: 54%;
+  }
+}
+
+/* -----------------------------------------------
+   SERVICE: Price Guide — 2×2 角丸カード
+----------------------------------------------- */
+.site--yoga-demo .p-service-price {
+  background: linear-gradient(to bottom, var(--color-bg-dark) 0%, var(--color-bg) 100%);
+  border-top: none;
+  padding-block: var(--space-10) var(--space-14);
+  padding-inline: var(--space-4);
+}
+
+.site--yoga-demo .p-service-price__inner {
+  max-width: 44rem;
+}
+
+.site--yoga-demo .c-price-grid {
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.site--yoga-demo .c-price-item {
+  border: 1px solid var(--color-border-gold);
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-6) var(--space-4);
+}
+
+.site--yoga-demo .c-price-item__name {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-sub);
+  letter-spacing: var(--letter-spacing-wide);
+  margin-bottom: var(--space-3);
+  line-height: 1.6;
+}
+
+.site--yoga-demo .c-price-item__price {
+  font-size: var(--font-size-xl);
+  color: var(--color-primary);
+  letter-spacing: 0;
+  margin-bottom: var(--space-2);
+  line-height: 1.2;
+}
+
+.site--yoga-demo .c-price-item__note {
+  font-size: 0.6875rem;
+  color: var(--color-text-sub);
+  line-height: 1.9;
+}
+
+.site--yoga-demo .c-price-note-bottom {
+  max-width: 36rem;
+  margin-inline: auto;
+  margin-top: var(--space-4);
+  font-size: var(--font-size-xs);
+  line-height: 2;
+  text-align: center;
+}
+
+@media (min-width: 48rem) {
+  .site--yoga-demo .c-price-grid {
+    gap: var(--space-4);
+  }
+
+  .site--yoga-demo .c-price-item {
+    padding: var(--space-8) var(--space-6);
+  }
+
+  .site--yoga-demo .c-price-item__price {
+    font-size: var(--font-size-2xl);
+  }
+}
+
+/* -----------------------------------------------
+   SERVICE: Flow — 大きな円番号・波線コネクター
+----------------------------------------------- */
+.site--yoga-demo .p-service-flow {
+  background: linear-gradient(to bottom, var(--color-bg) 0%, var(--color-bg-dark) 100%);
+  padding-block: var(--space-10) var(--space-12);
+  padding-inline: var(--space-4);
+}
+
+.site--yoga-demo .c-flow-steps {
+  gap: 0;
+}
+
+.site--yoga-demo .c-flow-step {
+  gap: var(--space-4);
+  padding-bottom: var(--space-8);
+}
+
+.site--yoga-demo .c-flow-step__num {
+  width: 3rem;
+  height: 3rem;
+  font-size: var(--font-size-xs);
+  letter-spacing: var(--letter-spacing-tight);
+  border: 1px solid var(--color-primary);
+  background-color: var(--color-bg);
+  color: var(--color-primary);
+  flex-shrink: 0;
+  box-shadow: 0 0 0 4px rgba(122, 158, 126, 0.12);
+}
+
+/* 点線コネクター */
+.site--yoga-demo .c-flow-step:not(:last-child)::after {
+  left: 1.5rem;
+  top: 3.2rem;
+  height: calc(100% - 3.2rem);
+  width: 1px;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    var(--color-primary) 0,
+    var(--color-primary) 4px,
+    transparent 4px,
+    transparent 10px
+  );
+  background-color: transparent;
+}
+
+.site--yoga-demo .c-flow-step__title {
+  font-size: var(--font-size-base);
+  letter-spacing: var(--letter-spacing-base);
+  margin-bottom: var(--space-2);
+}
+
+.site--yoga-demo .c-flow-step__text {
+  font-size: var(--font-size-sm);
+  line-height: 2.1;
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+@media (min-width: 48rem) {
+  .site--yoga-demo .c-flow-steps {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  .site--yoga-demo .c-flow-step {
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 0;
+    padding-inline: var(--space-4);
+  }
+
+  .site--yoga-demo .c-flow-step:last-child {
+    padding-right: 0;
+  }
+
+  .site--yoga-demo .c-flow-step__num {
+    margin-bottom: var(--space-4);
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  .site--yoga-demo .c-flow-step:not(:last-child)::after {
+    left: auto;
+    right: 0;
+    top: 1.75rem;
+    width: var(--space-4);
+    height: 1px;
+    background-image: repeating-linear-gradient(
+      to right,
+      var(--color-primary) 0,
+      var(--color-primary) 4px,
+      transparent 4px,
+      transparent 10px
+    );
+    background-color: transparent;
+  }
+}
+
+/* -----------------------------------------------
+   SERVICE: Notes — 横並び見出し+テキスト形式
+----------------------------------------------- */
+.site--yoga-demo .p-service-notes {
+  background-color: var(--color-bg-dark);
+  padding-block: var(--space-10) var(--space-12);
+  padding-inline: var(--space-4);
+}
+
+.site--yoga-demo .p-service-notes__inner {
+  border-top: none;
+  padding-top: 0;
+  max-width: 50rem;
+}
+
+.site--yoga-demo .p-service-notes__title {
+  font-size: var(--font-size-lg);
+  letter-spacing: var(--letter-spacing-wide);
+  padding-top: var(--space-8);
+  border-bottom: 1px solid var(--color-border-gold);
+  padding-bottom: var(--space-4);
+  margin-bottom: var(--space-8);
+  text-align: center;
+}
+
+.site--yoga-demo .c-notes-list {
+  flex-direction: column;
+  gap: 0;
+}
+
+.site--yoga-demo .c-notes-item {
+  text-align: left;
+  padding: var(--space-5) 0;
+  border-bottom: 1px solid var(--color-border-light);
+  flex-direction: row;
+  align-items: flex-start;
+  gap: var(--space-6);
+}
+
+.site--yoga-demo .c-notes-item:last-child {
+  border-bottom: none;
+}
+
+.site--yoga-demo .c-notes-item__heading {
+  font-size: var(--font-size-xs);
+  letter-spacing: var(--letter-spacing-wide);
+  color: var(--color-primary);
+  min-width: 7rem;
+  padding-top: 0.2em;
+  flex-shrink: 0;
+  margin-bottom: 0;
+}
+
+.site--yoga-demo .c-notes-item__text {
+  font-size: var(--font-size-sm);
+  line-height: 2.1;
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+@media (min-width: 48rem) {
+  .site--yoga-demo .c-notes-item__heading {
+    min-width: 9rem;
+  }
+}
+
+/* -----------------------------------------------
+   SERVICE: CTA — セージグリーン背景・明るいCTA
+----------------------------------------------- */
+.site--yoga-demo .p-service-cta {
+  background: linear-gradient(135deg, var(--color-primary) 0%, #5e8463 100%);
+  padding-block: var(--space-12) var(--space-16);
+  padding-inline: var(--space-4);
+  text-align: center;
+}
+
+.site--yoga-demo .p-service-cta__title {
+  color: var(--color-white);
+  font-size: var(--font-size-xl);
+  letter-spacing: var(--letter-spacing-wide);
+  padding-top: var(--space-8);
+  margin-bottom: var(--space-4);
+}
+
+.site--yoga-demo .p-service-cta__lead {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: var(--font-size-sm);
+  line-height: 2.3;
+  margin-bottom: var(--space-8);
+  letter-spacing: var(--letter-spacing-base);
+}
+
+.site--yoga-demo .p-service-cta .c-btn--primary {
+  background-color: var(--color-white);
+  color: var(--color-primary);
+  border-color: var(--color-white);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.site--yoga-demo .p-service-cta .c-btn--primary:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  opacity: 1;
+}
+
+.site--yoga-demo .p-service-cta__note {
+  color: rgba(255, 255, 255, 0.68);
+  font-size: var(--font-size-xs);
+  margin-top: var(--space-2);
+}
+
+@media (min-width: 48rem) {
+  .site--yoga-demo .p-service-cta__title {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--space-6);
+  }
+
+  .site--yoga-demo .p-service-cta__lead {
+    font-size: var(--font-size-base);
+  }
+}
+
+/* -----------------------------------------------
+   CONTACT: Methods — 中央寄せ・ソフトカード縦積み
+----------------------------------------------- */
+.site--yoga-demo .p-contact-methods {
+  background-color: var(--color-bg);
+  padding-block: var(--space-10) var(--space-14);
+  padding-inline: var(--space-4);
+}
+
+.site--yoga-demo .p-contact-methods__inner {
+  max-width: 40rem;
+}
+
+.site--yoga-demo .p-contact-methods__lead {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-sub);
+  max-width: 30rem;
+  margin-inline: auto;
+  margin-top: var(--space-8);
+  margin-bottom: var(--space-10);
+  line-height: 2.3;
+  letter-spacing: var(--letter-spacing-base);
+}
+
+.site--yoga-demo .c-contact-methods-grid {
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+}
+
+.site--yoga-demo .c-contact-card {
+  border: 1px solid var(--color-border-gold);
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg-dark);
+  padding: var(--space-8) var(--space-6);
+  box-shadow: var(--shadow-sm);
+  align-items: center;
+}
+
+.site--yoga-demo .c-contact-card__label {
+  font-size: 0.6875rem;
+  letter-spacing: var(--letter-spacing-wider);
+  color: var(--color-primary);
+  margin-bottom: var(--space-2);
+  opacity: 0.9;
+}
+
+.site--yoga-demo .c-contact-card__title {
+  font-size: var(--font-size-lg);
+  letter-spacing: var(--letter-spacing-base);
+  margin-bottom: var(--space-2);
+}
+
+.site--yoga-demo .c-contact-card__text {
+  font-size: var(--font-size-xs);
+  line-height: 2.1;
+  color: var(--color-text-sub);
+  margin-bottom: var(--space-5);
+}
+
+.site--yoga-demo .c-contact-card__btn {
+  border: 1px solid var(--color-primary);
+  border-radius: var(--btn-radius);
+  color: var(--color-primary);
+  background: transparent;
+  max-width: 100%;
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--font-size-xs);
+  letter-spacing: var(--letter-spacing-tight);
+  transition: background-color var(--transition-base), color var(--transition-base);
+}
+
+.site--yoga-demo .c-contact-card__btn:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+  opacity: 1;
+}
+
+@media (min-width: 48rem) {
+  .site--yoga-demo .p-contact-methods__inner {
+    max-width: 56rem;
+  }
+
+  .site--yoga-demo .c-contact-methods-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-4);
+  }
+}
+
+/* -----------------------------------------------
+   CONTACT: Before — ミニマルな番号リスト
+----------------------------------------------- */
+.site--yoga-demo .p-contact-before {
+  background-color: var(--color-bg-dark);
+  padding-block: var(--space-10) var(--space-12);
+  padding-inline: var(--space-4);
+}
+
+.site--yoga-demo .p-contact-before__inner {
+  border-top: none;
+  padding-top: 0;
+  max-width: 36rem;
+}
+
+.site--yoga-demo .p-contact-before__title {
+  font-size: var(--font-size-base);
+  letter-spacing: var(--letter-spacing-wide);
+  padding-top: var(--space-8);
+  border-bottom: 1px solid var(--color-border-gold);
+  padding-bottom: var(--space-4);
+  margin-bottom: var(--space-8);
+  text-align: center;
+}
+
+.site--yoga-demo .c-before-list {
+  gap: 0;
+}
+
+.site--yoga-demo .c-before-item {
+  padding: var(--space-4) 0;
+  gap: var(--space-4);
+  border-bottom: 1px solid var(--color-border-light);
+  align-items: flex-start;
+}
+
+.site--yoga-demo .c-before-item:last-child {
+  border-bottom: none;
+}
+
+.site--yoga-demo .c-before-item__num {
+  font-size: var(--font-size-xs);
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+  background: transparent;
+  flex-shrink: 0;
+  width: 1.8rem;
+  height: 1.8rem;
+}
+
+.site--yoga-demo .c-before-item__text {
+  font-size: var(--font-size-sm);
+  line-height: 2.1;
+  letter-spacing: var(--letter-spacing-tight);
+  color: var(--color-text-sub);
+}
+
+.site--yoga-demo .c-before-item__text strong {
+  color: var(--color-text);
+  font-weight: var(--font-weight-heading);
+  letter-spacing: var(--letter-spacing-base);
+}
+
+/* -----------------------------------------------
+   CONTACT: Final CTA — 静かな締め・体験訴求
+----------------------------------------------- */
+.site--yoga-demo .p-contact-final-cta {
+  background-color: var(--color-bg);
+  border-top: 1px solid var(--color-border-gold);
+  padding-block: var(--space-12) var(--space-16);
+}
+
+.site--yoga-demo .p-contact-final-cta__text {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-sub);
+  line-height: 2.4;
+  margin-bottom: var(--space-8);
+  letter-spacing: var(--letter-spacing-base);
+}
+
+.site--yoga-demo .p-contact-final-cta__btn {
+  border: 1px solid var(--color-primary);
+  border-radius: var(--btn-radius);
+  color: var(--color-primary);
+  background: transparent;
+  padding: var(--space-3) var(--space-8);
+  font-size: var(--font-size-sm);
+  letter-spacing: var(--letter-spacing-base);
+  transition: background-color var(--transition-base), color var(--transition-base);
+}
+
+.site--yoga-demo .p-contact-final-cta__btn:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+  opacity: 1;
+}
+
+/* -----------------------------------------------
+   PRIVACY — 可読性重視・緑ライン・ゆったり余白
+----------------------------------------------- */
+.site--yoga-demo .p-privacy-body {
+  background-color: var(--color-bg);
+  padding-block: var(--space-12) var(--space-16);
+}
+
+.site--yoga-demo .c-privacy-doc__intro {
+  font-size: var(--font-size-sm);
+  line-height: 2.3;
+  color: var(--color-text-sub);
+  margin-bottom: var(--space-8);
+  border-left: 2px solid var(--color-primary);
+  padding-left: var(--space-3);
+  opacity: 0.9;
+}
+
+.site--yoga-demo .c-privacy-doc h3 {
+  font-size: var(--font-size-sm);
+  letter-spacing: var(--letter-spacing-base);
+  border-left: 2px solid var(--color-primary);
+  border-bottom: none;
+  padding-left: var(--space-3);
+  padding-bottom: 0;
+  margin-top: var(--space-8);
+  margin-bottom: var(--space-3);
+  font-weight: var(--font-weight-heading);
+}
+
+.site--yoga-demo .c-privacy-doc p {
+  font-size: var(--font-size-sm);
+  line-height: 2.3;
+  color: var(--color-text-sub);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.site--yoga-demo .p-privacy-contact {
+  background-color: var(--color-bg-dark);
+  padding-block: var(--space-10) var(--space-12);
+}
+
+.site--yoga-demo .p-privacy-contact__text {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-sub);
+  margin-bottom: var(--space-4);
+  line-height: 2;
+}
+
+.site--yoga-demo .p-privacy-contact__info {
+  font-size: var(--font-size-sm);
+  color: var(--color-text);
+  line-height: 2.2;
+  margin-bottom: var(--space-8);
+}
+
+.site--yoga-demo .p-privacy-contact__back-btn {
+  border: 1px solid var(--color-border-gold);
+  border-radius: var(--btn-radius);
+  color: var(--color-text-sub);
+  padding: var(--space-2) var(--space-6);
+  font-size: var(--font-size-sm);
+  letter-spacing: var(--letter-spacing-tight);
+  transition: border-color var(--transition-base), color var(--transition-base);
+}
+
+.site--yoga-demo .p-privacy-contact__back-btn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-text);
+  opacity: 1;
+}
+
+/* -----------------------------------------------
+   FOOTER — 1px緑上ボーダー・小さなフォント
+----------------------------------------------- */
+.site--yoga-demo .l-footer {
+  border-top-width: 1px;
+  background: linear-gradient(
+    to bottom,
+    var(--color-bg-dark) 0%,
+    var(--color-bg-deep) 100%
+  );
+}
+
+.site--yoga-demo .l-footer-inner {
+  border-bottom-color: var(--color-border-light);
+}
+
+.site--yoga-demo .l-footer__logo {
+  font-size: var(--font-size-sm);
+  letter-spacing: var(--letter-spacing-wide);
+}
+
+.site--yoga-demo .l-footer__address {
+  font-size: var(--font-size-xs);
+  line-height: 2.3;
+  color: var(--color-footer-text);
+}
+
+.site--yoga-demo .l-footer__nav-link {
+  font-size: var(--font-size-xs);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.site--yoga-demo .l-footer-copy small {
+  font-size: 0.625rem;
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+/* -----------------------------------------------
+   デモ明示バナー
+----------------------------------------------- */
+.p-demo-notice {
+  font-size: var(--font-size-xs);
+  color: var(--color-footer-copy);
+  text-align: center;
+  padding: var(--space-2) var(--space-3);
+  background-color: var(--color-bg-deep);
+  border-top: 1px solid var(--color-border-light);
+  letter-spacing: var(--letter-spacing-tight);
+  margin: 0;
+}

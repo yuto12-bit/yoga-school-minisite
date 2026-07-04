@@ -872,12 +872,13 @@
 .site--yoga-demo .p-home-hero__sub {
   position: absolute;
   bottom: var(--space-8);
+  left: var(--space-6);
   right: var(--space-6);
-  max-width: 22rem;
+  max-width: none;
   font-size: var(--font-size-sm);
   letter-spacing: var(--letter-spacing-base);
   line-height: 2.2;
-  text-align: right;
+  text-align: center;
   opacity: 0.88;
   text-shadow: 0 1px 8px rgba(45, 41, 38, 0.4);
 }
@@ -900,8 +901,10 @@
   .site--yoga-demo .p-home-hero__sub {
     font-size: var(--font-size-base);
     bottom: var(--space-10);
+    left: auto;
     right: var(--space-10);
     max-width: 28rem;
+    text-align: right;
   }
 }
 
@@ -1829,7 +1832,7 @@
 ----------------------------------------------- */
 .site--yoga-demo .p-contact-methods {
   background-color: var(--color-bg);
-  padding-block: var(--space-10) var(--space-14);
+  padding-block: var(--space-8) var(--space-12);
   padding-inline: var(--space-4);
 }
 
@@ -1842,7 +1845,6 @@
   color: var(--color-text-sub);
   max-width: 30rem;
   margin-inline: auto;
-  margin-top: var(--space-8);
   margin-bottom: var(--space-10);
   line-height: 2.3;
   letter-spacing: var(--letter-spacing-base);
@@ -1880,7 +1882,7 @@
   font-size: var(--font-size-xs);
   line-height: 2.1;
   color: var(--color-text-sub);
-  margin-bottom: var(--space-5);
+  margin-bottom: var(--space-6);
 }
 
 .site--yoga-demo .c-contact-card__btn {

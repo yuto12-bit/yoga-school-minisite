@@ -835,15 +835,15 @@
 }
 
 .site--yoga-demo .p-home-hero__content {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
   padding: var(--space-10) var(--space-6);
 }
 
 .site--yoga-demo .p-home-hero__text-wrap {
   max-width: none;
-  position: relative;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
   padding-top: 0;
 }
 
@@ -853,11 +853,11 @@
 
 .site--yoga-demo .p-home-hero__title {
   writing-mode: vertical-rl;
-  white-space: nowrap;
   font-size: 2.125rem;
   letter-spacing: 0.14em;
   line-height: 2;
-  height: 20rem;
+  width: 8.5rem;
+  height: 31rem;
   margin-bottom: 0;
   text-shadow: 0 2px 24px rgba(45, 41, 38, 0.45);
 }
@@ -900,7 +900,8 @@
   .site--yoga-demo .p-home-hero__title {
     font-size: 3rem;
     line-height: 1.9;
-    height: 28rem;
+    width: 11.4rem;
+    height: 41rem;
   }
 
   .site--yoga-demo .p-home-hero__sub {

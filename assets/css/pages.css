@@ -837,7 +837,7 @@
 .site--yoga-demo .p-home-hero__content {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: flex-end;
   padding: var(--space-10) var(--space-6);
 }
 
@@ -853,7 +853,8 @@
 
 .site--yoga-demo .p-home-hero__title {
   writing-mode: vertical-rl;
-  font-size: 2rem;
+  white-space: nowrap;
+  font-size: 2.125rem;
   letter-spacing: 0.14em;
   line-height: 2;
   height: 20rem;
@@ -873,14 +874,18 @@
   position: absolute;
   bottom: var(--space-8);
   left: var(--space-6);
-  right: var(--space-6);
+  writing-mode: vertical-rl;
+  text-orientation: upright;
   max-width: none;
   font-size: var(--font-size-sm);
   letter-spacing: var(--letter-spacing-base);
-  line-height: 2.2;
-  text-align: center;
+  line-height: 1.9;
   opacity: 0.88;
   text-shadow: 0 1px 8px rgba(45, 41, 38, 0.4);
+}
+
+.site--yoga-demo .p-home-hero__sub span {
+  display: inline-block;
 }
 
 @media (min-width: 48rem) {
@@ -893,18 +898,15 @@
   }
 
   .site--yoga-demo .p-home-hero__title {
-    font-size: 2.75rem;
+    font-size: 3rem;
     line-height: 1.9;
-    height: 27rem;
+    height: 28rem;
   }
 
   .site--yoga-demo .p-home-hero__sub {
     font-size: var(--font-size-base);
     bottom: var(--space-10);
-    left: auto;
-    right: var(--space-10);
-    max-width: 28rem;
-    text-align: right;
+    left: var(--space-10);
   }
 }
 
